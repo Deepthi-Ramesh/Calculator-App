@@ -28,6 +28,9 @@ function del(){
     if( str =='Undefined'){
         document.querySelector(".item2").value="";  
     }
+    if(str=='Infinity'){
+        document.querySelector(".item2").value ="";
+    }
 }
 function compute(){
     var result = document.querySelector(".item2").value;
