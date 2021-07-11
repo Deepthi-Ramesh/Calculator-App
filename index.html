@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="manifest" href="./js/manifest.json"/>
+ <title>Frontend Mentor | Calculator app</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+   
+  <div class="container">
+       <div  class="calc-box">
+              <div class="grid1">
+                      <div class="item1">
+                        
+                         <p class="para">calc</p>
+                         <div class="theme-fam">
+                           <div class="theme">
+                              <p class="para">Theme</p>
+                               </div>
+                           <div class="theme-option">
+                                    <div class="option">
+                                        <p class="para">1</p>
+                                        <p class="para">2</p>
+                                        <p class="para">3</p>
+                                    </div>
+                                    <div class="box-bgm">
+                                          <input type="button" class="theme1" onclick="theme1();" />
+                                          <input type="button" class="theme2" onclick="theme2();"/>
+                                          <input type="button" class="theme3" onclick="theme3()"/>
+                                    </div>
+                           </div>
+                         </div>
+                     </div> 
+                      <div>
+                        <input type="text"readonly="readonly" class="item2"/>
+                        
+                      </div>
+                </div>
+              <div class="grid2">
+                        <button class="key"  onclick="view('7');">7</button>
+                        <button class="key" onclick="view('8');">8</button>
+                        <button class="key" onclick="view('9');">9</button>
+                        <button class="Del key" onclick="del();">Del</button>
+                        <button class="key" onclick="view('6');">6</button>
+                        <button class="key" onclick="view('5');">5</button>
+                        <button class="key" onclick="view('4');">4</button>
+                        <button class="key" id="symbol" onclick="view('+');">+</button>
+                        <button class="key" onclick="view('1');">1</button>
+                        <button class="key" onclick="view('2');">2</button>
+                        <button class="key" onclick="view('3');">3</button>
+                        <button class="key" id="symbol" onclick="view('-');">-</button>
+                        <button class="key" onclick="view('.');">.</button>
+                        <button class="key" onclick="view('0');">0</button>
+                        <button class="key"id="symbol" onclick="view('/');">/</button>
+                        <button class="key"id="symbol" onclick="view('*');">x</button>
+                        <button class="reset-key key" onclick="reset();">Reset</button>
+                        <button class="equal-key key" onclick="compute();">=</button>
+                </div>
+         </div>
+  </div>
+  
+
+  <script src="./js/theme.js"></script>
+  <script src = "./js/app.js"></script>
+  <script>
+    if('serviceWorker' in navigator){
+      window.addEventListener('load', ()=>{
+        navigator.serviceWorker.register('./js/serviceWorker.js')
+        .then(reg => console.log('SUCCESS',reg.scope))
+        .catch(err => console.log('FAILURE',err));
+      })
+    }
+  </script>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Deepthi M R</a>.
+  </div>
+</body>
+</html>
