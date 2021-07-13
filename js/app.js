@@ -2,18 +2,20 @@ function view(num){
     var str = document.querySelector(".item2").value;
     if((num === "+" || num === "-" || num === "*" || num === "/") && (str[str.length - 1] === "+" || str[str.length - 1] === "-" || str[str.length - 1] === "*" || str[str.length - 1] === "/")){
         var newStr = str.substring(0,str.length-1) + num;
-        console.log(newStr);
+         console.log(newStr);
         document.querySelector(".item2").value = newStr;
     }
     else{
         document.querySelector(".item2").value += num;
     }
-    if(str=='Undefined'){
+    
+    if(str =='Undefined'){
         document.querySelector(".item2").value = num;
     }
     if(str=='Infinity'){
         document.querySelector(".item2").value = num;
     }
+    
 }
 
 function reset(){
@@ -28,7 +30,7 @@ function del(){
     if( str =='Undefined'){
         document.querySelector(".item2").value="";  
     }
-    if(str=='Infinity'){
+    if(str =='Infinity'){
         document.querySelector(".item2").value ="";
     }
 }
@@ -42,4 +44,16 @@ function compute(){
       catch(err){
         document.querySelector(".item2").value ='Undefined';
       }
+}
+function dot(num){
+    var str = document.querySelector(".item2").value;
+    var dot=".";
+    if((num === ".") && (str[str.length-1] === ".")){
+        var pt = str.substring(0,str.length-1) + dot;
+        document.querySelector(".item2").value = pt;
+    }
+    else{
+        document.querySelector(".item2").value += num;
+    }
+   
 }
