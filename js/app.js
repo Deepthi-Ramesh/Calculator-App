@@ -45,15 +45,21 @@ function compute(){
         document.querySelector(".item2").value ='Undefined';
       }
 }
+
 function dot(num){
-    var str = document.querySelector(".item2").value;
-    var dot=".";
-    if((num === ".") && (str[str.length-1] === ".")){
-        var pt = str.substring(0,str.length-1) + dot;
-        document.querySelector(".item2").value = pt;
-    }
-    else{
-        document.querySelector(".item2").value += num;
-    }
-   
+        var str = document.querySelector(".item2").value;
+        var dot=".";
+        if((num === ".") && (str[str.length-1] === ".")){
+            var pt = str.substring(0,str.length-1) + dot;
+            document.querySelector(".item2").value = pt;
+        }
+        else{
+            document.querySelector(".item2").value += num;
+        }
+        for(var i=0 ;i<str.length;i++){
+            if((num === ".") && (str[i]==="."))
+            document.querySelector(".item2").value = str;
+            if((num ===".")&&((str[i]==="+")||(str[i]==="-")||(str[i]==="*")||(str[i]==="/")))
+            document.querySelector(".item2").value +=num; 
+           }
 }
